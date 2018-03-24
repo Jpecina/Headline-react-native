@@ -8,12 +8,12 @@ function SavedCard(props){
             <Image source={{uri:props.articleImage}} alt="image coming soon" style={styles.savedImage}/>
         </View>
         <View style={styles.info}>
-            <Text style={{fontSize:15}}>
+            <Text style={{fontSize:15,color:'#F9F9F9'}}>
                 {props.articleName}
             </Text>
-            <Text style={{fontSize:10, marginLeft:5}}>{props.source}</Text>
-            <View style={{height:15,width:60,fontSize:10,  marginRight:5, backgroundColor:'grey',textAlign:'center',borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
-                  <Text style={{fontSize:10,textAlign:'center',width:'100%'}}>  Delete </Text>
+            <Text style={{fontSize:10,color:'#A1A1A1'}}>{props.source}</Text>
+            <View style={{height:15,width:60,fontSize:10, backgroundColor:'#CD4031',textAlign:'center',borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                  <Text style={{fontSize:10,textAlign:'center',width:'100%',color:'white'}}>Delete</Text>
             </View>
         </View>
         </View>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         flexDirection:'row-reverse',
         height:120,
         width:'100%',
-        backgroundColor:'white',
+        backgroundColor:'#242424',
         justifyContent:'space-between',
         alignItems:'center',
         padding:10,

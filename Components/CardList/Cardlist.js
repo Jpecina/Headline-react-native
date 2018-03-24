@@ -19,12 +19,11 @@ class ArticleCardList extends Component {
   render() {
     return (
       <View style = {styles.container}>
-        <View style = {styles.container}>
+        
         <Image
-        style={{width:300, height:200}}
+        style={{width:300, height:200,marginTop:10}}
         source={{uri: this.props.articleImage}}
       />
-        </View>
         <View style = {styles.textContainer}>
         <Text style = {styles.titleText}>{this.props.articleName}</Text>
         <Text style = {styles.sourceText}>{this.props.articleSource}</Text>
@@ -42,34 +41,44 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#242424',
       margin:10,
       padding:10,
       height:'auto',
       borderRadius:15,
+      shadowOffset:{
+        width: 1,  
+        height: 1,
+      },
+      shadowColor: 'black',
+      shadowOpacity: 1.0
 
     },
     textContainer:{
      margin:10,
+     
 
     },
     titleText:{
         fontSize:30,
         fontWeight:'bold',
-        color:"#222222"
+        color:"#F9F9F9"
     },
     sourceText:{
         fontSize:15,
         fontStyle:'italic',
+        color:'#A1A1A1'
 
     },
     descriptionText:{
         fontSize:20,
-        fontWeight:'normal'
+        fontWeight:'normal',
+        color:'#DCDCDC'
     },
     icon:{
       marginTop:10,
-      marginLeft:10
+      marginLeft:10,
+      color:"#A1A1A1"
     }
 
   

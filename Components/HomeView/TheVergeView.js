@@ -36,14 +36,12 @@ export default class ContentExample extends Component {
       <View>
       <StatusBarBackground/>
       <Text style = {styles.titleContainer}>The Verge</Text>
-      <ScrollView>
-      <Body>
-      
-        <View style = {styles.articleListContainer}>
+      <ScrollView style={{height:'85%'}}>
+      <View style = {styles.articleListContainer}>
           {articlesList}
-        </View>
+      </View>
       
-      </Body>
+    
       </ScrollView>
       </View>
     );
@@ -53,16 +51,18 @@ export default class ContentExample extends Component {
 const styles = StyleSheet.create({
     articleListContainer: {
       justifyContent:'space-between',
-      marginTop:10
+      backgroundColor:'#2C2C2C'
     },
     
     titleContainer:{
+      height:'15%',
       justifyContent:'flex-start',
       fontSize:60,
       fontWeight:'bold',
-      marginTop:25,
-      marginLeft:12,
-      color:"#A1D882"
+      // marginTop:25,
+      // marginLeft:12,
+      color:"#F9F9F9",
+      backgroundColor:'#1C1C1C'
     },
     footer:{
       backgroundColor:'blue',

@@ -40,12 +40,12 @@ class HomeView extends Component{
         return(
             <View>
             <StatusBarBackground/>
-            <View style={{width: '100%', height: 70, backgroundColor: 'white',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center'}}>
-                <Icon name='search' style={{marginLeft:10}} />
+            <View style={{width: '100%', height: 70, backgroundColor: '#1C1C1C',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center'}}>
+                <Icon name='search' style={{marginLeft:10, color:'#F8F8F8'}} />
                 <TextInput defaultValue="Search Articles" style={styles.searchInput}/>
-                <Text style={{marginRight:15}}>Cancel</Text>
+                <Text style={{marginRight:15,color:'#F8F8F8'}}>Cancel</Text>
             </View>
-            <View style={{width: '100%', height: 530, backgroundColor: 'steelblue'}}>
+            <View style={{width: '100%', height: 530,backgroundColor:'#2C2C2C'}}>
             <ScrollView>
                 {savedList}
                 <SavedCard/>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     searchInput:{
         height:30,
         width:260,
-        backgroundColor:"#F0F0F0",
+        backgroundColor:"#2C2C2C",
         paddingLeft:5,
         color:"#807F7B"
         
