@@ -1,7 +1,10 @@
 import React from 'react'
 import {View,Text,ScrollList,StyleSheet,Image} from 'react-native'
+import axios from 'axios';
 
 function SavedCard(props){
+
+   
     return(
         <View style={styles.mainSavedCardDiv}>
         <View>
@@ -12,8 +15,8 @@ function SavedCard(props){
                 {props.articleName}
             </Text>
             <Text style={{fontSize:10,color:'#A1A1A1'}}>{props.source}</Text>
-            <View style={{height:15,width:60,fontSize:10, backgroundColor:'#CD4031',textAlign:'center',borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
-                  <Text style={{fontSize:10,textAlign:'center',width:'100%',color:'white'}}>Delete</Text>
+            <View style={{height:15,width:60,fontSize:10, backgroundColor:'#CD4031',textAlign:'center',borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}} >
+                  <Text style={{fontSize:10,textAlign:'center',width:'100%',color:'white'}} onPress={() => props.handlePress(props.index)}>Delete</Text>
             </View>
         </View>
         </View>

@@ -12,12 +12,14 @@ const app = express();
 app.use(json());
 app.use(cors());
 
-const { getTechArticles,getSavedArticles,saveArticle } = require(`${__dirname}/controllers/mainController`)
+const { getTechArticles,getSavedArticles,saveArticle, deleteSavedArticle,getPolygon,getBuzzfeed } = require(`${__dirname}/controllers/mainController`)
 
 app.get('/api/gettech', getTechArticles);
+app.get('/api/getPolygon',getPolygon);
+app.get('/api/getBuzzfeed',getBuzzfeed)
 app.get('/api/getSaved',getSavedArticles);
 app.post('/api/saveArticle',saveArticle);
-// app.delete('/api/deleteSavedArticle',deleteSavedArticle);
+app.delete('/api/deleteSaved/:index',deleteSavedArticle);
 
 
 

@@ -4,6 +4,10 @@ import TheVergeView from '../Components/HomeView/TheVergeView';
 import HomeView from '../Components/HomeView/HomeView';
 import {Icon} from 'react-native-vector-icons';
 import SearchView from '../Components/SearchView/SearchView';
+import SourceView from '../Components/SourceCards/SourceCardView'
+import PolygonView from '../Components/Views/PolygonView';
+
+
 export const Tabs = TabNavigator({
     TheVerge: {
         screen:TheVergeView,
@@ -14,6 +18,13 @@ export const Tabs = TabNavigator({
     Home: {
         screen:HomeView
     },
+    Source:{
+        screen:SourceView
+    },
+    Polygon:{
+        screen:PolygonView
+    }
+
     // search: {
     //     screen:SearchView
     // },

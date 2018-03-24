@@ -7,6 +7,7 @@ import { Tabs } from './config/router';
 
 
 
+
 class App extends Component {
   render() {
     return <Tabs/>

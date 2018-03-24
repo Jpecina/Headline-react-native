@@ -13,8 +13,8 @@ class ArticleCardList extends Component {
     this.saveArticle = this.saveArticle.bind(this);
   }
   saveArticle(){
-    axios.post('http://localhost:3001/api/saveArticle',this.props.item).then(response => console.warn("this is the response back from save:", response));
-    this.setState({saveStatus:"you clicked saved"})
+    axios.post('http://localhost:3001/api/saveArticle',this.props.item).then(response => this.setState({saveStatus:"you clicked saved"}) );
+    
   }
   render() {
     return (
