@@ -6,6 +6,9 @@ import {Icon} from 'react-native-vector-icons';
 import SearchView from '../Components/SearchView/SearchView';
 import SourceView from '../Components/SourceCards/SourceCardView'
 import PolygonView from '../Components/Views/PolygonView';
+import Axios from 'axios';
+import AxiosView from '../Components/Views/AxiosView';
+import BuzzfeedView from '../Components/Views/BuzzfeedView';
 
 
 export const Tabs = TabNavigator({
@@ -23,8 +26,13 @@ export const Tabs = TabNavigator({
     },
     Polygon:{
         screen:PolygonView
+    },
+    Axios:{
+        screen: AxiosView
+    },
+    Buzzfeed:{
+    screen: BuzzfeedView
     }
-
     // search: {
     //     screen:SearchView
     // },

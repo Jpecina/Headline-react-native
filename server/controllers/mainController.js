@@ -5,7 +5,7 @@ let techArticles = [];
 let savedArticles = [];
 let polygonArticles = [];
 let buzzfeedArticles = [];
-let axiosArticles = [];
+let axiosArticles= [];
 
 
 const getTechArticles = (req,res,next) => {
@@ -26,7 +26,11 @@ const getPolygon = (req,res,next) => {
     
 }
 const getBuzzfeed = (req,res,next) => {
-    
+    axios.get(`https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=${apiKey}`)
+    .then(response => {
+        buzzfeedArticles.push(response.data.articles);
+        res.json(buzzfeedArticles[0]);
+})
 }
 const getAxiosNews = (req,res,next) => {
     axios.get(`https://newsapi.org/v2/everything?sources=axios&apiKey=${apiKey}`)
@@ -57,5 +61,6 @@ module.exports = {
     saveArticle:saveArticle,
     deleteSavedArticle:deleteSavedArticle,
     getPolygon:getPolygon,
-    getBuzzfeed:getBuzzfeed
+    getBuzzfeed:getBuzzfeed,
+    getAxiosNews:getAxiosNews,
 }

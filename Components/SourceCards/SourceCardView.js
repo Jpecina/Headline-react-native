@@ -5,7 +5,8 @@ import StatusBarBackground from '../statusBar'
 import { Icon, Row } from 'native-base';
 import VergeLogo from '../../assets/theverge.png';
 import PolygonLogo from '../../assets/poligons.png';
-
+import axiosLogo from '../../assets/axios.png'
+import buzzfeedLogo from '../../assets/buzzfeed.png';
 function SourceView(){
     return (
         <View>
@@ -20,8 +21,8 @@ function SourceView(){
             <View style={{backgroundColor:'#2C2C2C',height:'90%',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',alignContent:'center'}}>
             <SourceCard name="The Verge" logo={VergeLogo}/>
             <SourceCard name="Polygon" logo={PolygonLogo}/>
-            <SourceCard name="Buzzfeed"/>
-            <SourceCard name="Axios"/>
+            <SourceCard name="Buzzfeed" logo={buzzfeedLogo}/>
+            <SourceCard name="Axios" logo={axiosLogo}/>
             </View>
         </View>
     )
