@@ -17,9 +17,11 @@ class HomeView extends Component{
             saved:[],
             search:''
         }
-        this.deleteSaved = this.deleteSaved.bind(this)
+        this.deleteSaved = this.deleteSaved.bind(this);
+        // this.handleInput=this.handleInput.bind(this);
     }
     componentDidMount(){
+        console.log("Hit did mount")
         axios.get('http://localhost:3001/api/getSaved').then(response => {
             this.setState({
                 saved:response.data
@@ -28,6 +30,9 @@ class HomeView extends Component{
 
         
     }
+    // componentWillUnmount(){
+    //     console.log("unmounting")
+    // }
     deleteSaved(id){
         axios.delete(`http://localhost:3001/api/deleteSaved/${id}`).then(response => {
             this.setState({
@@ -41,8 +46,14 @@ class HomeView extends Component{
             // this.setState({search:''})
             console.warn("clicked!!!!!!!")
         }
+
+        // handleInput(text){
+        //   this.state.saved.filter(source => {
+        //      return source === text
+        //   })
+        // }
     render(){
-        
+        console.log(this.props)
         const savedArticles = this.state.saved
         // console.warn('this is the savedArticles var:',savedArticles)
         const savedList = savedArticles.map((item,i)=>{
@@ -57,7 +68,7 @@ class HomeView extends Component{
             <StatusBarBackground/>
             <View style={{width: '100%', height: 70, backgroundColor: '#1C1C1C',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center'}}>
                 <Icon name='search' style={{marginLeft:10, color:'#F8F8F8'}} />
-                <TextInput defaultValue="Search Articles" style={styles.searchInput} onChangeText={(text) => this.handleInput(this.setState({search:text}))} />
+                <TextInput defaultValue="Search Articles" style={styles.searchInput} onChangeText={(text) => this.handleInput(text)} />
                 <Text style={{marginRight:15,color:'#F8F8F8'}} onPress={() => this.handleCancel}>Cancel</Text>
             </View>
             <View style={{width: '100%', height: 530,backgroundColor:'#2C2C2C'}}>

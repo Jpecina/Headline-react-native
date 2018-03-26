@@ -32,9 +32,9 @@ export const Tabs = TabNavigator({
     },
     Buzzfeed:{
     screen: BuzzfeedView
-    }
-    // search: {
-    //     screen:SearchView
-    // },
+    },
+    Search: {
+        screen:SearchView
+    },
 
 });

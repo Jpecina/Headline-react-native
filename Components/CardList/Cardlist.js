@@ -5,8 +5,8 @@ import axios from 'axios';
 
 
 class ArticleCardList extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       saveStatus: ""
     }
@@ -17,6 +17,7 @@ class ArticleCardList extends Component {
     
   }
   render() {
+    console.log(this.props, "Props from search")
     return (
       <View style = {styles.container}>
         

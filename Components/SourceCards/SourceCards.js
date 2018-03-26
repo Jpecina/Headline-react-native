@@ -3,10 +3,13 @@ import { View,Text,StyleSheet,Image } from "react-native";
 import logo from '../../assets/theverge.png'
 
 function SourceCard(props){
+
+
+
     return(
         <View style={styles.mainContainer}>
             <Image source={props.logo} style={styles.logo}/>
-            <Text style={styles.text}>{props.name}</Text>
+            <Text style={styles.text} onPress={props.stackFunction}>{props.name}</Text>
 
         </View>
     )
