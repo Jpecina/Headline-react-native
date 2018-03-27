@@ -8,6 +8,7 @@ import StatusBarBackground from '../statusBar';
 import axios from 'axios';
 import ArticleCardList from '../CardList/Cardlist'
 import SavedCard from '../CardList/SavedCardList';
+import {withNavigationFocus} from 'react-navigation'
 
 
 class HomeView extends Component{
@@ -22,13 +23,16 @@ class HomeView extends Component{
     }
     componentDidMount(){
         console.log("Hit did mount")
+        // s
+
+        
+    }
+    componentWillReceiveProps(){
         axios.get('http://localhost:3001/api/getSaved').then(response => {
             this.setState({
                 saved:response.data
             })
         })
-
-        
     }
     // componentWillUnmount(){
     //     console.log("unmounting")
@@ -81,7 +85,7 @@ class HomeView extends Component{
     }
 }
 
-export default HomeView;
+export default withNavigationFocus(HomeView);
 
 const styles = StyleSheet.create({
     mainViewContainer: {

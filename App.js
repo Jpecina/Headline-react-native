@@ -10,7 +10,9 @@ import StatusBarBackground from './Components/statusBar'
 
 
 class App extends Component {
+  
   render() {
+    console.disableYellowBox = true;
     return (
       <View style={{height:'100%',backgroundColor:'#1C1C1C'}}>
       <StatusBarBackground/>
