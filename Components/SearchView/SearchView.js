@@ -45,10 +45,11 @@ class SearchView extends Component{
 
         return(
             <View>
-            <StatusBarBackground/>
-            <View style={{width: '100%', height: 70, backgroundColor: '#1C1C1C',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center'}}>
+            <View style={{width: '100%', height: 85, backgroundColor: '#1C1C1C',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center',shadowOffset: {width: 1,  height: 1,},
+            shadowColor: 'black',
+            shadowOpacity: 1.0}}>
                 <Icon name='search' style={{marginLeft:10, color:'#F8F8F8'}} />
-                <TextInput defaultValue={this.state.searchInput} style={styles.searchInput} onChangeText={(text) => this.handleInput(text)} onSubmitEditing={() => this.handleSubmit(this.state.searchInput)} returnKeyType='search'/>
+                <TextInput defaultValue={this.state.searchInput} style={styles.searchInput} onChangeText={(text) => this.handleInput(text)} onSubmitEditing={() => this.handleSubmit(this.state.searchInput)} returnKeyType='search' clearTextOnFocus={true}/>
                 <Text style={{marginRight:15,color:'#F8F8F8'}}>Cancel</Text>
             </View>
             <View style={{width: '100%', height: 530,backgroundColor:'#2C2C2C'}}>

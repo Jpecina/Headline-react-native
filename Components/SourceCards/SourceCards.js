@@ -1,18 +1,18 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { View,Text,StyleSheet,Image } from "react-native";
-import logo from '../../assets/theverge.png'
 
-function SourceCard(props){
+class SourceCard extends Component{
 
-
-
+    render(){
+        console.log(this.props.navigation)
     return(
         <View style={styles.mainContainer}>
-            <Image source={props.logo} style={styles.logo}/>
-            <Text style={styles.text} onPress={props.stackFunction}>{props.name}</Text>
+            <Image source={this.props.logo} style={styles.logo}/>
+            <Text style={styles.text} onPress={()=>this.props.handlePress(this.props.viewName)}>{this.props.name}</Text>
 
         </View>
     )
+}
 }
 
 const styles = StyleSheet.create({

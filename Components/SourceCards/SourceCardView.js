@@ -7,25 +7,30 @@ import VergeLogo from '../../assets/theverge.png';
 import PolygonLogo from '../../assets/poligons.png';
 import axiosLogo from '../../assets/axios.png'
 import buzzfeedLogo from '../../assets/buzzfeed.png';
-function SourceView(){
+import TheVergeView from '../HomeView/TheVergeView';
+import {withNavigation} from 'react-navigation'
+
+class SourceView extends React.Component{
+    constructor(props){
+        super(props)
+        this.handlePress = this.handlePress.bind(this)
+    }
+    handlePress(name){
+        console.log(name)
+        this.props.navigation.navigate(name)
+    }
+    render(){console.log(this.props)
+
     return (
         <View>
-            <View>
-            <StatusBarBackground/>
-            </View>
-            <View style={{width: '100%', height: 70, backgroundColor: '#1C1C1C',display:'flex',justifyContent:"center",alignItems:'center'}}>
-                <Text style={{color:'#F9F9F9',fontSize:30}}>
-                    Headline
-                </Text>
-            </View>
-            <View style={{backgroundColor:'#2C2C2C',height:'90%',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',alignContent:'center'}}>
-            <SourceCard name="The Verge" logo={VergeLogo}/>
-            <SourceCard name="Polygon" logo={PolygonLogo}/>
-            <SourceCard name="Buzzfeed" logo={buzzfeedLogo}/>
-            <SourceCard name="Axios" logo={axiosLogo}/>
+            <View style={{backgroundColor:'#2C2C2C',height:'100%',display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',alignContent:'center'}}>
+            <SourceCard name="The Verge" logo={VergeLogo} viewName={`TheVergeView`} handlePress={this.handlePress}/>
+            <SourceCard name="Polygon" logo={PolygonLogo} viewName={`PolygonView`} handlePress={this.handlePress}/>
+            <SourceCard name="Buzzfeed" logo={buzzfeedLogo} viewName={`BuzzfeedView`} handlePress={this.handlePress}/>
+            <SourceCard name="Axios" logo={axiosLogo} viewName={`AxiosView`} handlePress={this.handlePress}/>
             </View>
         </View>
     )
 }
-
-export default SourceView;
+}
+export default withNavigation(SourceView);

@@ -8,12 +8,16 @@ class ArticleCardList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      saveStatus: ""
+      saveStatus: "",
+      iconActive:false
     }
     this.saveArticle = this.saveArticle.bind(this);
   }
   saveArticle(){
     axios.post('http://localhost:3001/api/saveArticle',this.props.item).then(response => this.setState({saveStatus:"you clicked saved"}) );
+    this.setState({
+      iconActive:true
+    })
     
   }
   render() {
@@ -29,7 +33,7 @@ class ArticleCardList extends Component {
         <Text style = {styles.titleText}>{this.props.articleName}</Text>
         <Text style = {styles.sourceText}>{this.props.articleSource}</Text>
         <Text style = {styles.descriptionText}>{this.props.articleDescription}</Text>
-        <View><Icon name="bookmark" style = {styles.icon} onPress={this.saveArticle } /></View>
+        <View><Icon name="bookmark" style = {styles.icon} onPress={this.saveArticle } active={this.state.iconActive} /></View>
         </View>
       </View>
     );

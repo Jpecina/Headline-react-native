@@ -59,16 +59,15 @@ class HomeView extends Component{
         const savedList = savedArticles.map((item,i)=>{
             return (
                 // <ArticleCardList articleName = {item.title} articleImage = {item.urlToImage} articleDescription = {item.description} articleSource = {item.source.name} key = {i}/>
-                <SavedCard key={i}  articleName={item.title} source={item.source.name} articleImage={item.urlToImage} index={i} handlePress={this.deleteSaved}/>
+                <SavedCard key={i}  articleName={item.title} source={item.source.name || ''} articleImage={item.urlToImage} index={i} handlePress={this.deleteSaved}/>
             )
             })
 
         return(
             <View>
-            <StatusBarBackground/>
-            <View style={{width: '100%', height: 70, backgroundColor: '#1C1C1C',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center'}}>
+            <View style={{width: '100%', height: 85, backgroundColor: '#1C1C1C',display:'flex',flexDirection:'row',justifyContent:"space-between",alignItems:'center'}}>
                 <Icon name='search' style={{marginLeft:10, color:'#F8F8F8'}} />
-                <TextInput defaultValue="Search Articles" style={styles.searchInput} onChangeText={(text) => this.handleInput(text)} />
+                <TextInput defaultValue="Search Articles" style={styles.searchInput} onChangeText={(text) => this.handleInput(text)} clearTextOnFocus={true}/>
                 <Text style={{marginRight:15,color:'#F8F8F8'}} onPress={() => this.handleCancel}>Cancel</Text>
             </View>
             <View style={{width: '100%', height: 530,backgroundColor:'#2C2C2C'}}>
